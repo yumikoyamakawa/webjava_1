@@ -6,7 +6,12 @@
 </head>
 <body>
 	<h1 th:text = "'Item List'" ></h1>
-		<div th:text = "${}"></div>
+		<tr th:each= "item: ${itemlist}" th:object= "${itemlist}"  >
+			<td th:text = "${item.itemId}"></td>
+			<td th:text = "${item.itemName}"></td>
+			<td th:text = "${item.itemPrice}"></td>
+		</tr>
+
 
 </body>
 </html>
